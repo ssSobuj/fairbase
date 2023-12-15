@@ -10,6 +10,7 @@ const auth = getAuth(fairbase);
 
 export default function Twitter() {
   const [usrData, setUsrData] = useState({});
+  console.log(usrData);
 
   const handletwitter = () => {
     signInWithPopup(auth, provider)
@@ -31,6 +32,8 @@ export default function Twitter() {
   return (
     <>
       <button onClick={handletwitter}>login with twitter</button>
+      <h1>{usrData?.user?.displayName}</h1>
+      <img src={usrData?.user?.photoURL} alt="" />
     </>
   );
 }
