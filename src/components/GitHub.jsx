@@ -8,7 +8,6 @@ const provider = new GithubAuthProvider();
 
 export default function GitHub() {
   const [userData, getUserData] = useState({});
-  console.log(userData);
   const handleClick = () => {
     signInWithPopup(auth, provider)
       .then((result) => {

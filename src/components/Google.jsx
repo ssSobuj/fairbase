@@ -13,8 +13,6 @@ export default function Google() {
   }, [userData]);
 
   const handleClick = (e) => {
-    // e.preventDefault();
-
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
