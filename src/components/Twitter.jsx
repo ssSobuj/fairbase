@@ -33,7 +33,7 @@ export default function Twitter() {
     <>
       <button onClick={handletwitter}>login with twitter</button>
       <h1>{usrData?.user?.displayName}</h1>
-      <img src={usrData?.user?.photoURL} alt="" />
+      <img style={{width:'200px'}} src={usrData?.user?.photoURL} alt="" />
     </>
   );
 }
