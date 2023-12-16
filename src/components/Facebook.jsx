@@ -9,25 +9,28 @@ const provider = new FacebookAuthProvider();
 
 export default function Facebook() {
   const [usrData, setUsrData] = useState({});
+  console.log(usrData);
+
   const handleClick = () => {
     signInWithPopup(auth, provider)
+
       .then((result) => {
         const user = result.user;
         const credential = FacebookAuthProvider.credentialFromResult(result);
         const accessToken = credential.accessToken;
-        setUsrData({ ...usrData, user });
+        setUsrData({...usrData,user})
+        
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = FacebookAuthProvider.credentialFromError(error);
+        console.log(error);
       });
   };
 
   return (
     <>
       <button onClick={handleClick}>sign in with facebook</button>
+      <h1>{usrData?.user?.displayName}</h1>
+      <img src={usrData?.user?.photoURL} alt="" />
     </>
   );
 }

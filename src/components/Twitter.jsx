@@ -10,7 +10,7 @@ const auth = getAuth(fairbase);
 
 export default function Twitter() {
   const [usrData, setUsrData] = useState({});
-  console.log(usrData);
+
 
   const handletwitter = () => {
     signInWithPopup(auth, provider)

@@ -8,11 +8,7 @@ const provider = new GoogleAuthProvider();
 
 export default function Google() {
   const [userData, setUserData] = useState({});
-  useEffect(() => {
-    console.log(userData);
-  }, [userData]);
-
-  const handleClick = (e) => {
+  const handleClick = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
